@@ -23,8 +23,8 @@
     request.onload = () => {
      if (request.status === 200) {
        var image = JSON.parse(request.response).image_uris.small;
-       
-       document.getElementById("i"+i).src = image;
+       var element = "i"+i;
+       document.getElementById(element).src = image;
      }
     };
   }
