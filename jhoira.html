@@ -14,7 +14,7 @@
 </body>
 <script>
   var request = new XMLHttpRequest();
-  request.open('GET', "https://api.scryfall.com/cards/random");
+  request.open('GET', "https://api.scryfall.com/cards/random?q=t%3Ainstant");
   request.send();
   request.onload = () => {
     if (request.status === 200) {
