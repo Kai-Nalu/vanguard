@@ -16,7 +16,19 @@
 </body>
 <script>
   document.getElementById("cards").style.display = "none";
-  var request = new XMLHttpRequest();
+  function fetchJson(errmsg, ...args) {
+    return fetch(...args)
+        .then(response => {
+            if (!response.ok) { // *** .ok is simpler than .status == 200
+                throw new Error(errmsg);
+            }
+            return response.json();
+        });
+  }
+  const randInst = new Request('https://api.scryfall.com/cards/random?q=t%3Ainstant');
+  document.getElementById("i1").src = JSON.parse(fectchJson('woops', randInst)).image_uris.small;
+  
+  /*var request = new XMLHttpRequest();
   request.open('GET', "https://api.scryfall.com/cards/random?q=t%3Ainstant");
   for (int i = 1; i <= 3; i++) {
     request.send();
@@ -27,7 +39,7 @@
        document.getElementById(element).src = image;
      }
     };
-  }
+  }*/
   document.getElementById("cards").style.display = "block";
 </script>
 </html>
