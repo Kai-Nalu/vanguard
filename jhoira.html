@@ -15,13 +15,15 @@
 <script>
   var request = new XMLHttpRequest();
   request.open('GET', "https://api.scryfall.com/cards/random?q=t%3Ainstant");
-  request.send();
-  request.onload = () => {
-    if (request.status === 200) {
-      var i1 = JSON.parse(request.response).image_uris.small;
-      
-      document.getElementById("i1").src = i1;
-    }
-  };
+  for (int i = 0; i < 3; i++) {
+    request.send();
+    request.onload = () => {
+     if (request.status === 200) {
+       var image = JSON.parse(request.response).image_uris.small;
+       
+       document.getElementById("i"+i).src = image;
+     }
+    };
+  }
 </script>
 </html>
