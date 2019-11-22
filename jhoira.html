@@ -7,12 +7,15 @@
 <body>
   <h1>Jhoira of the Ghitu</h1>
   <h2>Refresh this page to generate 3 random instants and 3 random sorceries.</h2>
-  <h3>Instants:<h3>
-  <img id="i1"><img id="i2"><img id="i3">
-  <h3>Sorceries:<h3>
-  <img><img><img>
+  <div id="cards">
+    <h3>Instants:<h3>
+    <img id="i1"><img id="i2"><img id="i3">
+    <h3>Sorceries:<h3>
+    <img><img><img>
+  </div>
 </body>
 <script>
+  document.getElementById("cards").style.display = "none";
   var request = new XMLHttpRequest();
   request.open('GET', "https://api.scryfall.com/cards/random?q=t%3Ainstant");
   for (int i = 1; i <= 3; i++) {
@@ -25,5 +28,6 @@
      }
     };
   }
+  document.getElementById("cards").style.display = "block";
 </script>
 </html>
