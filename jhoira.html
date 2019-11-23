@@ -17,19 +17,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
   document.getElementById("cards").style.display = "none";
-  $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){
-    document.getElementById("i1").src = data.image_uris.normal;
-  });
-  /*var request = new XMLHttpRequest();
-  request.open('GET', "https://api.scryfall.com/cards/random?q=t%3Ainstant");
-  request.send();
-  request.onload = () => {
-   if (request.status === 200) {
-     var image = JSON.parse(request.response).image_uris.normal;
-     var element = "i1";
-     document.getElementById(element).src = image;
-   }
-  };*/
+  for (int i = 1; i <= 3; i++) {
+    $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){
+      document.getElementById("i"+i).src = data.image_uris.normal;
+    });
+  }
   document.getElementById("cards").style.display = "block";
 </script>
 </html>
