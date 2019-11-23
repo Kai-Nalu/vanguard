@@ -1,6 +1,9 @@
 <!doctype html>
 <html>
 <head>
+  <style>
+    img {width:33%;}
+  </style>
   <meta charset="UTF-8">
   <title>Jhoira of the Ghitu</title>
 </head>
@@ -9,18 +12,14 @@
   <h2>Refresh this page to generate 3 random instants and 3 random sorceries.</h2>
   <div id="cards">
     <h3>Instants:<h3>
-    <div style="width:100%">
       <img id="i1"><img id="i2"><img id="i3">
-    </div>
     <h3>Sorceries:<h3>
-    <div style="width:100%">
-      <img><img><img>
-    </div>
+      <img id="s1"><img id="s2"><img id="s3">
   </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-  console.log("11/22, 10:37");
+  console.log("11/22, 10:42");
   document.getElementById("cards").style.display = "none";
   $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){document.getElementById("i1").src = data.image_uris.normal;});
   $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){document.getElementById("i2").src = data.image_uris.normal;});
