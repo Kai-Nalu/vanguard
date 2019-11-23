@@ -16,12 +16,12 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-  console.log("9:04");
+  console.log("9:38");
   document.getElementById("cards").style.display = "none";
   var i;
   for (i = 0; i < 3; i++) {
+    window.alert(i);
     $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){
-      window.alert(i);
       console.log("i"+(i+1));
       console.log(typeof ("i"+(i+1)))
       console.log(data.image_uris.normal);
