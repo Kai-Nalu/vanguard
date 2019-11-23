@@ -17,17 +17,15 @@
 <script>
   document.getElementById("cards").style.display = "none";
   var request = new XMLHttpRequest();
-  for (int i = 1; i <=3, i++) {
   request.open('GET', "https://api.scryfall.com/cards/random?q=t%3Ainstant");
   request.send();
   request.onload = () => {
    if (request.status === 200) {
      var image = JSON.parse(request.response).image_uris.normal;
-     var element = "i"+i;
+     var element = "i1";
      document.getElementById(element).src = image;
    }
   };
-  }
   document.getElementById("cards").style.display = "block";
 </script>
 </html>
