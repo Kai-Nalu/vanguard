@@ -19,7 +19,7 @@
   document.getElementById("cards").style.display = "none";
   $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){
     //document.getElementById("i1").src = JSON.parse(data).image_uris.normal;
-    window.alert(data);
+    window.alert(JSON.parse(data));
   });
   /*var request = new XMLHttpRequest();
   request.open('GET', "https://api.scryfall.com/cards/random?q=t%3Ainstant");
