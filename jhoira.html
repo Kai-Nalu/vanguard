@@ -16,15 +16,17 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-  console.log("8:51");
+  console.log("8:56");
   document.getElementById("cards").style.display = "none";
   var i;
-  for (i = 1; i < 4; i++) {
+  for (i = 0; i < 3; i++) {
     $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){
       console.log(i);
+      console.log("i"+(i+1));
+      console.log(typeof "i"+(i+1))
       console.log(data.image_uris.normal);
       console.log(typeof data.image_uris.normal);
-      document.getElementById("i"+i).src = data.image_uris.normal;
+      document.getElementById("i"+(i+1)).src = data.image_uris.normal;
     });
   }
   document.getElementById("cards").style.display = "block";
