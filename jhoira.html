@@ -16,19 +16,11 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-  console.log("9:38");
+  console.log("9:48");
   document.getElementById("cards").style.display = "none";
-  var i;
-  for (i = 0; i < 3; i++) {
-    window.alert(i);
-    $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){
-      console.log("i"+(i+1));
-      console.log(typeof ("i"+(i+1)))
-      console.log(data.image_uris.normal);
-      console.log(typeof data.image_uris.normal);
-      document.getElementById("i"+(i+1)).src = data.image_uris.normal;
-    });
-  }
+  $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){document.getElementById("i1")).src = data.image_uris.normal;});
+  $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){document.getElementById("i2")).src = data.image_uris.normal;});
+  $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){document.getElementById("i3")).src = data.image_uris.normal;});
   document.getElementById("cards").style.display = "block";
 </script>
 </html>
