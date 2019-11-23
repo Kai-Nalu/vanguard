@@ -17,6 +17,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
   document.getElementById("cards").style.display = "none";
+  console.log(1);
   $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){
     //document.getElementById("i1").src = JSON.parse(data).image_uris.normal;
     console.log(data.image_uris.normal);
