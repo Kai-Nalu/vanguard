@@ -21,12 +21,12 @@
 <script>
   console.log("11/22, 10:42");
   document.getElementById("cards").style.display = "none";
-  $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){document.getElementById("i1").src = data.image_uris.normal;});
-  $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){document.getElementById("i2").src = data.image_uris.normal;});
-  $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){document.getElementById("i3").src = data.image_uris.normal;});
-  $.get("https://api.scryfall.com/cards/random?q=t%3Asorcery", function(data){document.getElementById("s1").src = data.image_uris.normal;});
-  $.get("https://api.scryfall.com/cards/random?q=t%3Asorcery", function(data){document.getElementById("s2").src = data.image_uris.normal;});
-  $.get("https://api.scryfall.com/cards/random?q=t%3Asorcery", function(data){document.getElementById("s3").src = data.image_uris.normal;});
+  $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){document.getElementById("i1").src = data.image_uris.small;});
+  $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){document.getElementById("i2").src = data.image_uris.small;});
+  $.get("https://api.scryfall.com/cards/random?q=t%3Ainstant", function(data){document.getElementById("i3").src = data.image_uris.small;});
+  $.get("https://api.scryfall.com/cards/random?q=t%3Asorcery", function(data){document.getElementById("s1").src = data.image_uris.small;});
+  $.get("https://api.scryfall.com/cards/random?q=t%3Asorcery", function(data){document.getElementById("s2").src = data.image_uris.small;});
+  $.get("https://api.scryfall.com/cards/random?q=t%3Asorcery", function(data){document.getElementById("s3").src = data.image_uris.small;});
   document.getElementById("cards").style.display = "block";
 </script>
 </html>
